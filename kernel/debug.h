@@ -11,8 +11,6 @@
 #define DBG_DEV (1UL << 6) /* drivers */
 #define DBG_ALL (~0UL)
 
-// Category names, indexed by bit number. This header is shared by the
-// kernel and user programs so names and bits cannot drift apart.
 #define DBG_CATNAMES { "proc", "sched", "syscall", "trap", "vm", "fs", "dev" }
 
 // Levels, ordered by decreasing severity.
@@ -41,10 +39,7 @@ char *dbg_catname(unsigned long cat, char *buf);
 char *dbg_pidstr(char *buf);
 
 #ifdef DEBUG
-// Print only when cat is set in debug_mask and level is at or below
-// debug_level. The arguments sit inside the if, so they are evaluated
-// only when the message is printed. fmt must be a string literal,
-// since it is pasted onto the prefix format.
+
 #define dprintf(cat, level, fmt, ...)                                  \
   do {                                                                 \
     if ((debug_mask & (cat)) && (level) <= debug_level) {              \
