@@ -1,0 +1,34 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 1 starting
+hart 2 starting
+init: starting sh
+$ dbg only sched
+mask  0x2 (sched)
+level 3 (info)
+$ dbg level trace
+mask  0x2 (sched)
+level 4 (trace)
+[sched  ][ -][scheduler] switching to pid 2 (sh)
+$ echo hi
+[sched  ][ -][scheduler] switching to pid 2 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+[sched  ][ -][scheduler] switching to pid 5 (sh)
+hi
+[sched  ][ -][scheduler] switching to pid 5 (echo)
+[sched  ][ -][scheduler] switching to pid 2 (sh)
+$ dbg off all
+[sched  ][ -][scheduler] switching to pid 2 (sh)
+[sched  ][ -][scheduler] switching to pid 6 (sh)
+[sched  ][ -][scheduler] switching to pid 6 (sh)
+mask  0x0 (none)
+level 4 (trace)
+$ QEMU: Terminated
+
