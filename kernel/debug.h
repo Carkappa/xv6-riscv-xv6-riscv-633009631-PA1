@@ -27,6 +27,15 @@
 extern unsigned long debug_mask;
 extern int debug_level;
 
+
+// Part B
+#define DBGCTL_GETMASK  0
+#define DBGCTL_SETMASK  1
+#define DBGCTL_GETLEVEL 2
+#define DBGCTL_SETLEVEL 3
+uint64 debugctl(int op, uint64 arg);  // returns previous value, -1 on invalid op
+
+
 // Prefix helpers (kernel/debug.c).
 char *dbg_catname(unsigned long cat, char *buf);
 char *dbg_pidstr(char *buf);
