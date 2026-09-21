@@ -6,6 +6,7 @@
 #include "proc.h"
 #include "defs.h"
 #include "elf.h"
+#include "debug.h"
 
 static int loadseg(pde_t *, uint64, struct inode *, uint, uint);
 
@@ -41,6 +42,7 @@ kexec(char *path, char **argv)
   // Open the executable file.
   if ((ip = namei(path)) == 0) {
     end_op();
+    dprintf(DBG_PROC, DBG_ERR, "exec %s: not found\n", path);
     return -1;
   }
   ilock(ip);
@@ -137,9 +139,13 @@ kexec(char *path, char **argv)
   p->trapframe->sp = sp;         // initial stack pointer
   proc_freepagetable(oldpagetable, oldsz);
 
+  dprintf(DBG_PROC, DBG_INFO, "exec %s, %d args, sz %lu\n", path, (int)argc,
+          sz);
+
   return argc; // this ends up in a0, the first argument to main(argc, argv)
 
 bad:
+  dprintf(DBG_PROC, DBG_ERR, "exec %s failed\n", path);
   if (pagetable)
     proc_freepagetable(pagetable, sz);
   if (ip) {

@@ -2,7 +2,6 @@
 #include "kernel/debug.h"
 #include "user/user.h"
 
-
 static char *catnames[] = DBG_CATNAMES;
 static char *levelnames[] = DBG_LEVELNAMES;
 
