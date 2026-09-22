@@ -10,7 +10,6 @@
 // Width of the longest category name ("syscall"), so prefixes line up.
 #define DBG_NAMEWIDTH 7
 
-
 unsigned long debug_mask = 0;
 int debug_level = DBG_INFO;
 
