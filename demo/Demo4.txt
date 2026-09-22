@@ -1,0 +1,94 @@
+Script started on 2026-09-21 18:15:16-05:00 [COMMAND="make qemu" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 1 starting
+hart 2 starting
+init: starting sh
+$ dbg on proc
+mask  0x1 (proc)
+level 3 (info)
+[proc   ][ 3][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 2][kwait] reaped pid 3, status 0
+[proc   ][ 2][freeproc] freeing slot of pid 3 (dbg)
+$ ls
+[proc   ][ 2][allocproc] allocated pid 4
+[proc   ][ 2][kfork] child pid 4 created, sz 20480
+[proc   ][ 4][kexec] exec ls, 1 args, sz 20480
+.              1 1 1024
+..             1 1 1024
+README         2 2 2489
+dbg            2 3 45576
+cat            2 4 36776
+echo           2 5 35640
+forktest       2 6 18184
+grep           2 7 44232
+init           2 8 36024
+kill           2 9 35560
+ln             2 10 35360
+ls             2 11 42928
+mkdir          2 12 35616
+rm             2 13 35608
+sh             2 14 58360
+stressfs       2 15 36472
+usertests      2 16 205960
+grind          2 17 51872
+wc             2 18 37776
+zombie         2 19 34896
+logstress      2 20 37608
+forphan        2 21 36400
+dorphan        2 22 35848
+sync           2 23 34992
+console        3 24 0
+[proc   ][ 4][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 2][kwait] reaped pid 4, status 0
+[proc   ][ 2][freeproc] freeing slot of pid 4 (ls)
+$ echo hi
+[proc   ][ 2][allocproc] allocated pid 5
+[proc   ][ 2][kfork] child pid 5 created, sz 20480
+[proc   ][ 5][kexec] exec echo, 2 args, sz 16384
+hi
+[proc   ][ 5][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 2][kwait] reaped pid 5, status 0
+[proc   ][ 2][freeproc] freeing slot of pid 5 (echo)
+$ dbg off all
+[proc   ][ 2][allocproc] allocated pid 6
+[proc   ][ 2][kfork] child pid 6 created, sz 20480
+[proc   ][ 6][kexec] exec dbg, 3 args, sz 20480
+mask  0x0 (none)
+level 3 (info)
+$ ls
+.              1 1 1024
+..             1 1 1024
+README         2 2 2489
+dbg            2 3 45576
+cat            2 4 36776
+echo           2 5 35640
+forktest       2 6 18184
+grep           2 7 44232
+init           2 8 36024
+kill           2 9 35560
+ln             2 10 35360
+ls             2 11 42928
+mkdir          2 12 35616
+rm             2 13 35608
+sh             2 14 58360
+stressfs       2 15 36472
+usertests      2 16 205960
+grind          2 17 51872
+wc             2 18 37776
+zombie         2 19 34896
+logstress      2 20 37608
+forphan        2 21 36400
+dorphan        2 22 35848
+sync           2 23 34992
+console        3 24 0
+$ echo hi
+hi
+$ dbg
+mask  0x0 (none)
+level 3 (info)
+$ QEMU: Terminated
+
+Script done on 2026-09-21 18:15:38-05:00 [COMMAND_EXIT_CODE="0"]
