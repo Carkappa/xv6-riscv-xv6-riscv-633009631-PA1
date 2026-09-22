@@ -6,6 +6,7 @@
 #include "spinlock.h"
 #include "proc.h"
 #include "vm.h"
+#include "debug.h"
 
 uint64
 sys_exit(void)
@@ -109,4 +110,38 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+uint64
+sys_debugctl(void)
+{
+  int op, level;
+  uint64 arg, old;
+
+  argint(0, &op);
+  argaddr(1, &arg);
+
+  switch (op) {
+  case DBGCTL_GETMASK:
+    return debug_mask;
+
+  case DBGCTL_SETMASK:
+    old = debug_mask;
+    debug_mask = arg;
+    return old;
+
+  case DBGCTL_GETLEVEL:
+    return debug_level;
+
+  case DBGCTL_SETLEVEL:
+    level = (int)arg;
+    if (level < DBG_ERR || level > DBG_TRACE)
+      return -1;
+    old = debug_level;
+    debug_level = level;
+    return old;
+
+  default:
+    return -1;
+  }
 }

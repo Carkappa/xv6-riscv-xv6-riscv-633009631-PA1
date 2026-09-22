@@ -79,6 +79,13 @@ CFLAGS += -fno-builtin-free
 CFLAGS += -fno-builtin-memcpy -Wno-main
 CFLAGS += -fno-builtin-printf -fno-builtin-fprintf -fno-builtin-vprintf
 CFLAGS += -I.
+
+# Kernel debug logging (kernel/debug.h). Build with DEBUG=0 to
+# compile every dprintf call out of the kernel.
+DEBUG ?= 1
+ifeq ($(DEBUG),1)
+CFLAGS += -DDEBUG
+endif
 CFLAGS += $(shell $(CC) -fno-stack-protector -E -x c /dev/null >/dev/null 2>&1 && echo -fno-stack-protector)
 
 # Disable PIE when possible (for Ubuntu 16.10 toolchain)
@@ -131,6 +138,7 @@ mkfs/mkfs: mkfs/mkfs.c $K/fs.h $K/param.h
 .PRECIOUS: %.o
 
 UPROGS=\
+	$U/_dbg\
 	$U/_cat\
 	$U/_echo\
 	$U/_forktest\
