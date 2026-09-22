@@ -1,15 +1,12 @@
+Script started on 2026-09-21 18:14:14-05:00 [COMMAND="make qemu" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
 qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
 
 xv6 kernel is booting
 
-hart 1 starting
 hart 2 starting
-recovering tail 0 dst 46
-recovering tail 1 dst 1152
-recovering tail 2 dst 1042
-recovering tail 3 dst 34
+hart 1 starting
 init: starting sh
-$ dbg
+$ dbg  
 mask  0x0 (none)
 level 3 (info)
 $ ls
@@ -38,8 +35,8 @@ forphan        2 21 36400
 dorphan        2 22 35848
 sync           2 23 34992
 console        3 24 0
-big            2 25 124928
 $ echo hi
 hi
 $ QEMU: Terminated
-
+
+Script done on 2026-09-21 18:14:31-05:00 [COMMAND_EXIT_CODE="0"]

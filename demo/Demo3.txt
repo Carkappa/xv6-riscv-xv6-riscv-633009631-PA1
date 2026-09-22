@@ -1,3 +1,4 @@
+Script started on 2026-09-21 18:14:57-05:00 [COMMAND="make qemu" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
 qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
 
 xv6 kernel is booting
@@ -5,7 +6,7 @@ xv6 kernel is booting
 hart 1 starting
 hart 2 starting
 init: starting sh
-$ dbg on proc
+$ dbg on proc 
 mask  0x1 (proc)
 level 3 (info)
 [proc   ][ 3][kexit] exiting, status 0, 0 children reparented to init
@@ -21,89 +22,91 @@ fork test
 [proc   ][ 4][allocproc] allocated pid 6
 [proc   ][ 4][kfork] child pid 6 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 7
-[proc   ][ 5][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 7 created, sz 12288
+[proc   ][ 5][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 8
 [proc   ][ 4][kfork] child pid 8 created, sz 12288
+[proc   ][ 6][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 9
 [proc   ][ 4][kfork] child pid 9 created, sz 12288
+[proc   ][ 8][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 10
 [proc   ][ 4][kfork] child pid 10 created, sz 12288
-[proc   ][ 7][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][ 6][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 9][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 11
 [proc   ][ 4][kfork] child pid 11 created, sz 12288
-[proc   ][ 4][allocproc] allocated pid 12
 [proc   ][10][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 4][allocproc] allocated pid 12
 [proc   ][ 4][kfork] child pid 12 created, sz 12288
-[proc   ][ 8][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][11][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 13
 [proc   ][ 4][kfork] child pid 13 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 14
 [proc   ][ 4][kfork] child pid 14 created, sz 12288
-[proc   ][ 9][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][11][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][12][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 15
 [proc   ][ 4][kfork] child pid 15 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 16
+[proc   ][13][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 16 created, sz 12288
-[proc   ][14][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][15][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 17
 [proc   ][ 4][kfork] child pid 17 created, sz 12288
-[proc   ][13][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][14][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][16][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 18
 [proc   ][ 4][kfork] child pid 18 created, sz 12288
-[proc   ][12][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][17][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 19
 [proc   ][ 4][kfork] child pid 19 created, sz 12288
+[proc   ][ 7][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 20
-[proc   ][16][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 20 created, sz 12288
 [proc   ][18][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][15][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][20][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 21
-[proc   ][17][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 21 created, sz 12288
+[proc   ][19][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 22
 [proc   ][ 4][kfork] child pid 22 created, sz 12288
+[proc   ][21][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 23
 [proc   ][ 4][kfork] child pid 23 created, sz 12288
+[proc   ][22][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 24
 [proc   ][ 4][kfork] child pid 24 created, sz 12288
-[proc   ][21][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][22][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][19][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][23][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][20][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 25
 [proc   ][ 4][kfork] child pid 25 created, sz 12288
+[proc   ][24][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 26
 [proc   ][ 4][kfork] child pid 26 created, sz 12288
-[proc   ][24][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][25][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 27
 [proc   ][ 4][kfork] child pid 27 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 28
 [proc   ][ 4][kfork] child pid 28 created, sz 12288
+[proc   ][26][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][27][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][28][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 29
 [proc   ][ 4][kfork] child pid 29 created, sz 12288
-[proc   ][28][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 30
 [proc   ][ 4][kfork] child pid 30 created, sz 12288
+[proc   ][29][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 31
 [proc   ][ 4][kfork] child pid 31 created, sz 12288
-[proc   ][25][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][26][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][30][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 32
 [proc   ][ 4][kfork] child pid 32 created, sz 12288
 [proc   ][31][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][30][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][32][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 33
 [proc   ][ 4][kfork] child pid 33 created, sz 12288
-[proc   ][32][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][33][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 34
 [proc   ][ 4][kfork] child pid 34 created, sz 12288
-[proc   ][29][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][34][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 35
 [proc   ][ 4][kfork] child pid 35 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 36
@@ -111,106 +114,104 @@ fork test
 [proc   ][35][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 37
 [proc   ][ 4][kfork] child pid 37 created, sz 12288
-[proc   ][34][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][33][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][36][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][37][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 38
 [proc   ][ 4][kfork] child pid 38 created, sz 12288
+[proc   ][38][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 39
 [proc   ][ 4][kfork] child pid 39 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 40
-[proc   ][38][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 40 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 41
 [proc   ][ 4][kfork] child pid 41 created, sz 12288
-[proc   ][39][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 42
 [proc   ][ 4][kfork] child pid 42 created, sz 12288
-[proc   ][36][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][40][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 43
 [proc   ][ 4][kfork] child pid 43 created, sz 12288
-[proc   ][41][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][42][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 44
+[proc   ][41][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 44 created, sz 12288
-[proc   ][40][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 45
+[proc   ][42][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 45 created, sz 12288
+[proc   ][39][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 46
-[proc   ][43][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kfork] child pid 46 created, sz 12288
-[proc   ][45][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 47
 [proc   ][ 4][kfork] child pid 47 created, sz 12288
-[proc   ][ 4][allocproc] allocated pid 48
 [proc   ][44][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][ 4][allocproc] allocated pid 48
 [proc   ][ 4][kfork] child pid 48 created, sz 12288
-[proc   ][46][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][45][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 49
 [proc   ][ 4][kfork] child pid 49 created, sz 12288
-[proc   ][48][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][49][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][46][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][43][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][47][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][48][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 50
 [proc   ][ 4][kfork] child pid 50 created, sz 12288
+[proc   ][49][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 51
 [proc   ][ 4][kfork] child pid 51 created, sz 12288
+[proc   ][50][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 52
 [proc   ][ 4][kfork] child pid 52 created, sz 12288
 [proc   ][ 4][allocproc] allocated pid 53
 [proc   ][ 4][kfork] child pid 53 created, sz 12288
-[proc   ][50][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][51][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 54
 [proc   ][ 4][kfork] child pid 54 created, sz 12288
+[proc   ][52][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 55
 [proc   ][ 4][kfork] child pid 55 created, sz 12288
 [proc   ][53][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][52][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][51][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 56
 [proc   ][ 4][kfork] child pid 56 created, sz 12288
+[proc   ][55][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 57
 [proc   ][ 4][kfork] child pid 57 created, sz 12288
+[proc   ][56][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][54][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][57][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 58
 [proc   ][ 4][kfork] child pid 58 created, sz 12288
-[proc   ][56][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 59
 [proc   ][ 4][kfork] child pid 59 created, sz 12288
-[proc   ][55][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][58][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 60
 [proc   ][ 4][kfork] child pid 60 created, sz 12288
-[proc   ][54][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][59][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 61
 [proc   ][ 4][kfork] child pid 61 created, sz 12288
+[proc   ][60][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 62
 [proc   ][ 4][kfork] child pid 62 created, sz 12288
-[proc   ][57][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][60][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][58][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][59][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][61][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 63
 [proc   ][ 4][kfork] child pid 63 created, sz 12288
+[proc   ][62][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 64
 [proc   ][ 4][kfork] child pid 64 created, sz 12288
-[proc   ][62][kexit] exiting, status 0, 0 children reparented to init
+[proc   ][63][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] allocated pid 65
 [proc   ][ 4][kfork] child pid 65 created, sz 12288
+[proc   ][64][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][allocproc] no free proc slot
 [proc   ][ 4][kfork] allocproc failed
+[proc   ][65][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kwait] reaped pid 5, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 5 (forktest)
 [proc   ][ 4][kwait] reaped pid 6, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 6 (forktest)
-[proc   ][61][kexit] exiting, status 0, 0 children reparented to init
-[proc   ][64][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kwait] reaped pid 7, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 7 (forktest)
 [proc   ][ 4][kwait] reaped pid 8, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 8 (forktest)
-[proc   ][63][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kwait] reaped pid 9, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 9 (forktest)
-[proc   ][65][kexit] exiting, status 0, 0 children reparented to init
 [proc   ][ 4][kwait] reaped pid 10, status 0
 [proc   ][ 4][freeproc] freeing slot of pid 10 (forktest)
 [proc   ][ 4][kwait] reaped pid 11, status 0
@@ -328,4 +329,5 @@ fork test OK
 [proc   ][ 2][kwait] reaped pid 4, status 0
 [proc   ][ 2][freeproc] freeing slot of pid 4 (forktest)
 $ QEMU: Terminated
-
+
+Script done on 2026-09-21 18:15:11-05:00 [COMMAND_EXIT_CODE="0"]
